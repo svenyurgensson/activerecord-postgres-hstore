@@ -18,9 +18,8 @@ module ActiveRecord
       end
 
       def load(hstore)
-        hstore.nil? ? nil : hstore.from_hstore
+        hstore.nil? ? nil : Hash[hstore.from_hstore.map{ |k, v| [k.to_sym, v] }]
       end
     end
   end
 end
-

@@ -6,7 +6,7 @@ describe "ActiverecordCodersHstore" do
   end
 
   it 'should load an hstore' do
-    ActiveRecord::Coders::Hstore.load("a=>a").should == { 'a' => 'a' }
+    ActiveRecord::Coders::Hstore.load("a=>a").should == { :a => 'a' }
   end
 
   it 'should dump an hstore' do

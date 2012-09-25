@@ -166,4 +166,22 @@ module ActiveRecord
       alias_method_chain :native_database_types, :hstore
     end
   end
+
+
+  module Store
+    extend ActiveSupport::Concern
+
+    module ClassMethods
+
+      def hstore(store_attribute, options = {})
+        serialize store_attribute, ActiveRecord::Coders::Hstore
+        store_accessor(store_attribute, options[:accessors]) if options.has_key? :accessors
+        after_initialize do
+          send("#{store_attribute}=", {}) unless send("#{store_attribute}")
+        end
+      end
+    end
+
+  end
+
 end
