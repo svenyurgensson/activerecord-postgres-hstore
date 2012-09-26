@@ -36,6 +36,22 @@ code should look like:
       serialize :data, ActiveRecord::Coders::Hstore
     end
 
+Or, what is simpler, you can leverage Rails ActiveRecord `store` class method in form:
+
+    class Person < ActiveRecord::Base
+      hstore :data, :salary, :eyes_colour, :kitten_name
+      ...
+    end
+
+    person = Person.new
+    person.salary = 2200
+    person.eyes_colour = 'dark green'
+    ....
+
+That ability currently resides only in @Svenyurgensson's branch so use gem from this repository:
+
+    gem 'activerecord-postgres-hstore', git: 'git://github.com/svenyurgensson/activerecord-postgres-hstore.git'
+
 Install
 -------
 

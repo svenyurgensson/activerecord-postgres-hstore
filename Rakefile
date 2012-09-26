@@ -31,8 +31,8 @@ Jeweler::Tasks.new do |gem|
   gem.summary = %Q{Goodbye serialize, hello hstore}
   gem.description = %Q{This gem adds support for the postgres hstore type. It is the _just right_ alternative for storing hashes instead of using seralization or dynamic tables.}
   gem.email = "juanmaiz@gmail.com"
-  gem.homepage = "http://github.com/softa/activerecord-postgres-hstore"
-  gem.authors = ["Juan Maiz", "Diogo Biazus"]
+  gem.homepage = "http://github.com/svenyurgensson/activerecord-postgres-hstore"
+  gem.authors = ["Juan Maiz", "Diogo Biazus", "Yury Batenko"]
   gem.license = "MIT"
   # dependencies defined in Gemfile
 end
@@ -45,4 +45,3 @@ RDoc::Task.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
-
