@@ -39,7 +39,7 @@ code should look like:
 Or, what is simpler, you can leverage Rails ActiveRecord `store` class method in form:
 
     class Person < ActiveRecord::Base
-      hstore :data, :salary, :eyes_colour, :kitten_name
+      hstore :data, accessors: [:salary, :eyes_colour, :kitten_name]
       ...
     end
 
